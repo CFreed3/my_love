@@ -46,14 +46,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const noBtn = document.querySelector('#noBtn');
 
-    noBtn.addEventListener('mouseover', function () {
+    function moverBotonNo() {
+        const randomX = parseInt(Math.random() * 100);
+        const randomY = parseInt(Math.random() * 100);
+    
+        noBtn.style.setProperty('top', randomY + '%');
+        noBtn.style.setProperty('left', randomX + '%');
+        noBtn.style.setProperty('transform', `translate(-${randomX}%, -${randomY}%)`);
+    }
+    
+    // PC: mouseover
+    noBtn.addEventListener('mouseover', moverBotonNo);
+    
+    // Móvil: touchstart
+    noBtn.addEventListener('touchstart', function (e) {
+        e.preventDefault(); // evita el toque
+        moverBotonNo();
+    });
+
+    /*noBtn.addEventListener('mouseover', function () {
         const randomX = parseInt(Math.random() * 100);
         const randomY = parseInt(Math.random() * 100);
 
         noBtn.style.setProperty('top', randomY + '%');
         noBtn.style.setProperty('left', randomX + '%');
         noBtn.style.setProperty('transform', `translate(-${randomX}%, -${randomY}%)`);
-    });
+    });*/
 });
 
 
