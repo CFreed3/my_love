@@ -51,6 +51,8 @@ button{
     position: absolute;
     background-color: #A18262;
     border: solid 2px white;
+    z-index: 10; /* más alto que el botón "sí" */
+    pointer-events: auto; /* asegurarse de que puede recibir eventos */
 }
 
 /*CONFIGURAR CLASES PARA CADA COLOR DE LETRA*/
